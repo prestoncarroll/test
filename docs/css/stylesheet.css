@@ -31,6 +31,30 @@ margin-left: 25%;
     font-weight: bold;
 }
 
+@media screen and (min-height: 1600px), (min-width: 2560px) {
+  
+    #resume {
+        height: 60%;
+    }
+
+    .headlines {
+        color: orange;
+    }
+
+    #body {
+    height: 1600px;
+
+    }
+
+    #canvas {
+        /* background-color: black; */
+        margin-top: 5%;
+        height: 300px;
+        width: 2550px;
+    }
+
+  }
+
 
 
 

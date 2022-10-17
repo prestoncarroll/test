@@ -88,8 +88,9 @@ function animate(){
 
 window.onload = setInterval(animate, 1000/30);
 // window.addEventListener('resize', function() {
-//     canvas.height = window.innerHeight;
-//     canvas.width = window.innerWidth
+//     document.getElementById("resume").
+//     canvas.height = 90;
+//     canvas.width = 100;
 // })
 
 const keys = {
