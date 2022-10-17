@@ -3,8 +3,8 @@ const context = canvas.getContext('2d');
 
 const gravity = .5;
 
-canvas.width = 1810;
-canvas.height = 90;
+canvas.width = 1800;
+canvas.height = 110;
 
 const images = {};
 images.player = new Image();
@@ -12,16 +12,20 @@ images.player.src = './img/charactersCutCopy.png';
 const characterActions = ['standLeft', 'standRight', 'left', 'right', 'jumpRight', 'jumpLeft'];
 const characters = [];
 
+const backGround = {};
+backGround.bricks = new Image();
+backGround.bricks.src = './img/mariofloor.png'
+
 class Character{
     constructor(){
         this.width = 20.89;
-        this.height = 41;
+        this.height = 44;
         // this.width = 18.3214286;
         // this.height = 36;
         this.frameX = 14
         this.frameY = 0;
         this.x = 200;
-        this.y = -100;
+        this.y = 20;
         // this.x = 100;
         // this.y = 180;
         this.speed = (5)
@@ -57,7 +61,24 @@ class Character{
     }
 }
 
+
+class Platform{
+    constructor(){
+    this.x = 0;
+    this.y = 100;
+    this.width = 1700;
+    this.height = 20;
+    this.image = backGround.bricks;
+
+    }
+
+    draw(){
+        context.drawImage(this.image, this.x, this.y)
+    }
+}
+
 const character = new Character();
+const platform = new Platform();
 characters.push(character);
 
 function drawSprite(img, sX, Sy, sW, sH, dX, dY, dW, dH){
@@ -69,6 +90,7 @@ function animate(){
     context.clearRect(0,0,canvas.width, canvas.height );
     characters[0].draw();
     characters[0].update();
+    platform.draw();
 
     if (keys.right.pressed) {
         character.velocity.x = 5;
@@ -84,6 +106,13 @@ function animate(){
     } else {
         character.x = 0 - character.width;
     }
+
+    //makes it to where mario jumps and lands on
+    // if (character.y + character.height <= 
+    //     platform.y && character.y + character.height + character.velocity.y >= platform.y)
+    //     {
+    //         character.velocity.y = 0 -1;
+    //     }
 }
 
 window.onload = setInterval(animate, 1000/30);
