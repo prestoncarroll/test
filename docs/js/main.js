@@ -8,7 +8,7 @@ canvas.height = 90;
 
 const images = {};
 images.player = new Image();
-images.player.src = '../img/charactersCutCopy.png';
+images.player.src = './img/charactersCutCopy.png';
 const characterActions = ['standLeft', 'standRight', 'left', 'right', 'jumpRight', 'jumpLeft'];
 const characters = [];
 
