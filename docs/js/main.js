@@ -116,6 +116,7 @@ function animate(){
 }
 
 window.onload = setInterval(animate, 1000/30);
+
 // window.addEventListener('resize', function() {
 //     document.getElementById("resume").
 //     canvas.height = 90;
